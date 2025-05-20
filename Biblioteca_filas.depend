@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1747710431 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.cpp
+	<iostream>
+
+1747710327 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\main.cpp
+	<iostream>
+	"fila.h"
+
+1747597101 d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.h
+
