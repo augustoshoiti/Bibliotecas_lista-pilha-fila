@@ -23,5 +23,7 @@ int first(Fila *fila);
 int destruirFila(Fila *fila);
 void printFila(Fila *fila);
 int editarElemento(Fila *fila, int antigo, int novo);
+bool removerElemento(Fila *fila, int valor);
+
 
 #endif

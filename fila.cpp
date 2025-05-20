@@ -103,3 +103,56 @@ int editarElemento(Fila *fila, int antigo, int novo) {
     return 0;
 }
 
+bool removerElemento(Fila *fila, int valor) {
+    if (vaziaFila(fila)) {
+        return false;
+    }
+
+    Node *atual = fila->inicio;
+    Node *anterior = nullptr;
+
+    while (atual != nullptr) {
+        if (atual->info == valor) {
+            if (anterior == nullptr) {
+                fila->inicio = atual->prox;
+                if (fila->inicio == nullptr) fila->fim = nullptr;
+            } else {
+                anterior->prox = atual->prox;
+                if (atual == fila->fim) fila->fim = anterior;
+            }
+            delete atual;
+            return true;
+        }
+        anterior = atual;
+        atual = atual->prox;
+    }
+    return false;
+}
+
+bool removerRepetidos(Fila *fila){
+    if (vaziaFila(fila)) {
+        return false;
+    }
+
+    Node *atual = fila->inicio;
+    Node *anterior = nullptr;
+    int valor;
+
+    while (atual != nullptr) {
+        if (atual->info == valor) {
+            if (anterior == nullptr) {
+                fila->inicio = atual->prox;
+                if (fila->inicio == nullptr) fila->fim = nullptr;
+            } else {
+                anterior->prox = atual->prox;
+                if (atual == fila->fim) fila->fim = anterior;
+            }
+            delete atual;
+            return true;
+        }
+        anterior = atual;
+        atual = atual->prox;
+        valor = atual->info;
+    }
+    return false;
+}

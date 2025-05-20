@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    cout << "teste fila" << endl;
+    cout << "TESTE FILA" << endl;
     Fila *fila = criarFila();
     enqueue(fila, 5);
     enqueue(fila, 10);
@@ -11,7 +11,7 @@ int main(){
 
     printFila(fila);
 
-    editarElemento(fila, 1, 6);
+    removerElemento(fila, 15);
     printFila(fila);
 
     return 0;
