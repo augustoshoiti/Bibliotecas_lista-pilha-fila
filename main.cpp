@@ -8,11 +8,11 @@ int main(){
     enqueue(fila, 5);
     enqueue(fila, 10);
     enqueue(fila, 15);
-    enqueue(fila, 10);
+    enqueue(fila, 8);
 
     printFila(fila);
 
-    removerRepetidos(fila);
+    removerPares(fila);
     printFila(fila);
 
     return 0;

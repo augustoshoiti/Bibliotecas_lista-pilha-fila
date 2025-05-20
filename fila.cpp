@@ -129,10 +129,10 @@ bool removerElemento(Fila *fila, int valor) {
     return false;
 }
 
-void removerRepetidos(Fila *fila) {
+bool removerRepetidos(Fila *fila) {
     if (vaziaFila(fila)) {
         cout << "Fila Vazia!" << endl;
-        return;
+        return false;
     }
 
     Node *atual = fila->inicio;
@@ -143,11 +143,9 @@ void removerRepetidos(Fila *fila) {
 
         while (verificador != nullptr) {
             if (verificador->info == atual->info) {
-                // Remover o nó duplicado
                 Node* duplicado = verificador;
                 anterior->prox = verificador->prox;
 
-                // Se o duplicado era o último, atualiza o ponteiro fim
                 if (duplicado == fila->fim) {
                     fila->fim = anterior;
                 }
@@ -162,6 +160,34 @@ void removerRepetidos(Fila *fila) {
 
         atual = atual->prox;
     }
+    return true;
 }
 
+bool removerPares(Fila *fila){
+    if (vaziaFila(fila)) {
+        return false;
+    }
+
+    Node *atual = fila->inicio;
+    Node *anterior = nullptr;
+    float verif;
+
+    while (atual != nullptr) {
+        verif = (atual->info) % 2;
+        if (verif == 0) {
+            if (anterior == nullptr) {
+                fila->inicio = atual->prox;
+                if (fila->inicio == nullptr) fila->fim = nullptr;
+            } else {
+                anterior->prox = atual->prox;
+                if (atual == fila->fim) fila->fim = anterior;
+            }
+        }
+        anterior = atual;
+        atual = atual->prox;
+    }
+    delete atual;
+    delete anterior;
+    return true;
+}
 

@@ -24,6 +24,7 @@ int destruirFila(Fila *fila);
 void printFila(Fila *fila);
 int editarElemento(Fila *fila, int antigo, int novo);
 bool removerElemento(Fila *fila, int valor);
-void removerRepetidos(Fila *fila);
+bool removerRepetidos(Fila *fila);
+bool removerPares(Fila *fila);
 
 #endif
