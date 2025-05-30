@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1747754713 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.cpp
+1747755066 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.cpp
 	<iostream>
 
 1747754574 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\main.cpp
@@ -7,4 +7,19 @@
 	"fila.h"
 
 1747754544 d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.h
+
+1748618272 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\lista.cpp
+	<iostream>
+	"tad.h"
+
+1748618475 d:\projetos\c&c++\biblioteca\biblioteca_filas\tad.h
+	"tad.cpp"
+
+1748618418 d:\projetos\c&c++\biblioteca\biblioteca_filas\tad.cpp
+
+1748618341 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\pilha.cpp
+	<iostream>
+	"tad.h"
+
+1748618418 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\tad.cpp
 
