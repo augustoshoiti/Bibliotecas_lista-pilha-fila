@@ -2,13 +2,8 @@
 #include "tad.h"
 using namespace std;
 
-
-
-/**
-
-**/
 Node* criaLista(){
-    //cout << "Lista criada com sucesso!" << endl;
+    cout << "Lista criada com sucesso!" << endl;
     return NULL;
 }
 
@@ -47,7 +42,6 @@ void printLista(Node *lista){
     }else{
         cout << "Lista vazia!" << endl;
     }
-
 }
 
 Node* removeIniLista(Node *lista){
@@ -180,4 +174,121 @@ int getElementoLista(Node *pAcess){
     if(pAcess){
         return pAcess->info;
     }
+}
+
+int minLista(Node *lista){
+    if(!vaziaLista(lista)){
+        Node *aux = lista;
+        int menor = lista->info;
+        while (aux){
+            if(menor > aux->info) {
+                menor = aux->info;
+            }
+            aux = aux->prox;
+        }
+        return menor;
+    }else{
+        cout << "Lista vazia!" << endl;
+        return 0;
+    }
+}
+
+int maxLista(Node *lista){
+    if(!vaziaLista(lista)){
+        Node *aux = lista;
+        int maior = lista->info;
+        while (aux){
+            if(maior < aux->info) {
+                maior = aux->info;
+            }
+            aux = aux->prox;
+        }
+        return maior;
+    }else{
+        cout << "Lista vazia!" << endl;
+        return 0;
+    }
+}
+
+float mediaLista(Node *lista){
+    if(!vaziaLista(lista)){
+        Node *aux = lista;
+        float soma = 0;
+        int i = 0;
+        while (aux){
+            soma += aux->info;
+            i++;
+            aux = aux->prox;
+        }
+        return (soma / i);
+    }else{
+        cout << "Lista vazia!" << endl;
+        return 0;
+    }
+}
+
+int lenLista(Node *lista){
+    if(!vaziaLista(lista)){
+        Node *aux = lista;
+        int i = 0;
+        while (aux){
+            i++;
+            aux = aux->prox;
+        }
+        return i;
+    }else{
+        cout << "Lista vazia!" << endl;
+        return 0;
+    }
+}
+
+Node* appendLista(Node *lista1, Node *lista2){
+    if(!vaziaLista(lista1)) {
+        Node *aux = lista1;
+        while(aux->prox) aux = aux->prox;
+        aux->prox = lista2;
+    } else {
+        lista1 = lista2;
+    }
+    return lista1;
+}
+
+Node* reverseLista(Node* lista){
+    if(!vaziaLista(lista)){
+        Node* aux = lista;
+        Node* revers = criaLista();
+        while(aux){
+            revers = insereIniLista(revers, aux->info);
+            aux = aux->prox;
+        }
+        return revers;
+    } else {
+        cout << "Lista vazia!" << endl;
+        return nullptr;
+    }
+}
+
+int isSubLista(Node* L1, Node* L2){
+    if(vaziaLista(L2)) return 1; // Lista vazia é sublista de qualquer lista
+    if(vaziaLista(L1)) return 0; // Lista principal vazia não pode conter sublista não vazia
+
+    Node* aux = L1;
+
+    while(aux) {
+        Node* temp1 = aux;
+        Node* temp2 = L2;
+
+        // Verifica se os elementos de L2 correspondem aos de L1 a partir de aux
+        while(temp1 != nullptr && temp2 != nullptr && temp1->info == temp2->info) {
+            temp1 = temp1->prox;
+            temp2 = temp2->prox;
+        }
+
+        if(!temp2) {
+            // Todos os elementos de L2 foram encontrados em sequência
+            return 1;
+        }
+        aux = aux->prox;
+    }
+    return 0; // Sublista não encontrada
 }

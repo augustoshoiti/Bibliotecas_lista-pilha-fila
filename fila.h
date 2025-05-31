@@ -1,19 +1,7 @@
 #ifndef FILA_H
 #define FILA_H
 
-//Estrutura de lista comum
-struct node {
-    int info;
-    struct node *prox;
-};
-typedef struct node Node;
-
-// Estrutura da fila
-struct fila {
-    Node *inicio;
-    Node *fim;
-};
-typedef struct fila Fila;
+#include "tad.h"
 
 Fila* criarFila();
 int vaziaFila(Fila *fila);

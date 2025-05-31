@@ -2,13 +2,16 @@
 1747755066 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.cpp
 	<iostream>
 
-1747754574 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\main.cpp
+1748711687 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\main.cpp
 	<iostream>
+	"lista.h"
+	"pilha.h"
 	"fila.h"
 
-1747754544 d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.h
+1748707292 d:\projetos\c&c++\biblioteca\biblioteca_filas\fila.h
+	"tad.h"
 
-1748618272 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\lista.cpp
+1748711687 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\lista.cpp
 	<iostream>
 	"tad.h"
 
@@ -22,4 +25,10 @@
 	"tad.h"
 
 1748618418 source:d:\projetos\c&c++\biblioteca\biblioteca_filas\tad.cpp
+
+1748711717 d:\projetos\c&c++\biblioteca\biblioteca_filas\lista.h
+	"tad.h"
+
+1748618356 d:\projetos\c&c++\biblioteca\biblioteca_filas\pilha.h
+	"tad.h"
 
