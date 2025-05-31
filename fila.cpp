@@ -129,7 +129,7 @@ bool removerElemento(Fila *fila, int valor) {
     return false;
 }
 
-bool removerRepetidos(Fila *fila) {
+bool removerRepetidosFila(Fila *fila) {
     if (vaziaFila(fila)) {
         cout << "Fila Vazia!" << endl;
         return false;
@@ -163,7 +163,7 @@ bool removerRepetidos(Fila *fila) {
     return true;
 }
 
-bool removerPares(Fila *fila){
+bool removerParesFila(Fila *fila){
     if (vaziaFila(fila)) {
         return false;
     }

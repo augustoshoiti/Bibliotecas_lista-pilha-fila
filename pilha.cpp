@@ -88,10 +88,115 @@ RETORNO: void
 */
 void printPilhaControle(Pilha* pilha){
 	Node* aux = pilha->topo;
-	cout << "____" << endl;
+	cout << "_____" << endl;
 	while(aux){
-		cout << "| " << aux->info << " |\n"<< "____" << endl;
+		cout << "| " << aux->info << " |\n"<< "_____" << endl;
 		aux = aux->prox;
 	}
-	cout << "X" << endl;
+	cout << "  X  " << endl;
 }
+
+int buscaElementoPilha(Pilha *pilha, int elem){
+    if(!vaziaPilha(pilha)){
+        Pilha* pilhaAux = criaPilha();
+        Node* aux = pilha->topo;
+        int encontrado = 0;
+        while(aux){
+            if(aux->info == elem){
+                encontrado = 1;
+                break;
+            } else {
+                pilhaAux = push(pilhaAux, (pop(pilha)));
+            }
+            aux = pilha->topo;
+        }
+        aux = pilhaAux->topo;
+        while(aux){
+            pilha = push(pilha, (pop(pilhaAux)));
+            aux = pilhaAux->topo;
+        }
+        delete pilhaAux, aux;
+        return encontrado;
+    } else {
+        cout << "Pilha vazia!" << endl;
+        return 0;
+    }
+}
+
+int buscaRemoverPilha(Pilha *pilha, int elem){
+    if(!vaziaPilha(pilha)){
+        Pilha* pilhaAux = criaPilha();
+        Node* aux = pilha->topo;
+        int removido = 0;
+        while(aux){
+            if(aux->info == elem){
+                pop(pilha);
+                removido = 1;
+                break;
+            } else {
+                pilhaAux = push(pilhaAux, (pop(pilha)));
+            }
+            aux = pilha->topo;
+        }
+        aux = pilhaAux->topo;
+        while(aux){
+            pilha = push(pilha, (pop(pilhaAux)));
+            aux = pilhaAux->topo;
+        }
+        delete pilhaAux, aux;
+        return removido;
+    } else {
+        cout << "Pilha vazia!" << endl;
+        return 0;
+    }
+}
+
+int removerParesPilha(Pilha *pilha){
+    if(!vaziaPilha(pilha)){
+        Pilha* pilhaAux = criaPilha();
+        Node* aux = pilha->topo;
+        int removido = 0;
+        while(!vaziaPilha(pilha)){
+            if((aux->info % 2) == 0){
+                pop(pilha);
+                removido = 1;
+            } else {
+                pilhaAux = push(pilhaAux, (pop(pilha)));
+            }
+            aux = pilha->topo;
+        }
+
+        while(!vaziaPilha(pilhaAux)){
+            pilha = push(pilha, (pop(pilhaAux)));
+        }
+        delete pilhaAux, aux;
+        return removido;
+    } else {
+        cout << "Pilha vazia!" << endl;
+        return 0;
+    }
+}
+
+int removerRepetidosPilha(Pilha *pilha){
+    if (!vaziaPilha(pilha)) {
+        Pilha* pilhaAux = criaPilha();
+
+        while (!vaziaPilha(pilha)) {
+            int valor = pop(pilha);
+
+            if (!buscaElementoPilha(pilhaAux, valor)) {
+                pilhaAux = push(pilhaAux, valor);
+            }
+        }
+        while (!vaziaPilha(pilhaAux)) {
+            pilha = push(pilha, pop(pilhaAux));
+        }
+
+        delete pilhaAux;
+        return 1;
+    } else {
+        cout << "Pilha vazia!" << endl;
+        return 0;
+    }
+}
+

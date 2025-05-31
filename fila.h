@@ -12,7 +12,7 @@ int destruirFila(Fila *fila);
 void printFila(Fila *fila);
 int editarElemento(Fila *fila, int antigo, int novo);
 bool removerElemento(Fila *fila, int valor);
-bool removerRepetidos(Fila *fila);
-bool removerPares(Fila *fila);
+bool removerRepetidosFila(Fila *fila);
+bool removerParesFila(Fila *fila);
 
 #endif
